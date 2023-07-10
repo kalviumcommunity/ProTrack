@@ -1,13 +1,27 @@
-import React from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 import "./Style/home.css";
-// import Shift_box from "../Components/Shift_box";
+import Shift_box from "../Components/Shift_box";
+import {useDispatch, useSelector} from 'react-redux'
+import getData from "../Redux/Action/getData.action";
 
 function Home(props) {
-    return (
-        <div id="home_parent_box">
-        
+
+  let Shift_list = ["First Shift", "Second Shift", "Night Shift" , "No Shift"];
+
+  let dispatch = useDispatch();
+
+  useEffect( () => {
+
+    getData(dispatch ); 
+
+  }, [] ) 
+
+
+  return (
+    <div id="home_parent_box">
       <div>
-      <div className="home_left_box">
+        <div className="home_left_box">
           <div className="manpower_heading">
             <h3>Manpower Status</h3>
           </div>
@@ -77,18 +91,18 @@ function Home(props) {
               </tbody>
             </table>
           </div>
-        </div> 
+        </div>
 
         <div className="home_left_dummy_box"></div>
 
-        {/* <div className="home_right_box">
+        <div className="home_right_box">
           {Shift_list.map((elem, index) => {
-            return <Shift_box   shift={elem} key={index + 1} />;
+            return <Shift_box shift={elem} key={index + 1} />;
           })}
-        </div> */}
+        </div>
       </div>
     </div>
-    );
+  );
 }
 
 export default Home;

@@ -1,0 +1,39 @@
+.home_task_parent {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+.home_task_user  {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.home_task_user > img {
+    width: 40px;
+}
+
+.home_task_task_list {
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+
+.end_shift_button,
+.home_task_task_list  {
+    background-color: white;
+    padding: 3px  10px;
+    border: 1px solid blue;
+    color: blue;
+    width: 110px;
+    border-radius: 5px;
+    font-size: small;
+
+}
