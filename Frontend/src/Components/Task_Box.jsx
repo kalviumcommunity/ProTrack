@@ -12,26 +12,7 @@ function Task_Box({  task , shift }) {
 
     const [Tasklist, setTaskList] = useState({});
 
-    let manpowerStats = {
-      f_Cluster : 0,
-      f_Packing : 0,
-      f_Oddcase : 0,
-      f_Absent : 0,
-      f_Break : 0,
-      s_Cluster : 0,
-      s_Other : 0,
-      s_Packing : 0,
-      s_Oddcase : 0,
-      s_Absent : 0,
-      s_Break : 0,
-      s_Other : 0,
-      n_Cluster : 0,
-      n_Packing : 0,
-      n_Oddcase : 0,
-      n_Absent : 0,
-      n_Break : 0,
-      n_Other : 0,
-    }
+   
     
     let Pickers = useSelector( (state ) => {
       return state.Pickers;

@@ -1,4 +1,4 @@
-import Pickers from "../../Data/Pickers"
+
 import ActionTypes from "../ActionTypes";
 let initialState = {
     Pickers : []
