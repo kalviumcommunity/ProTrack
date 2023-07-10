@@ -1,0 +1,13 @@
+.home_button_task {
+    background-color: green;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+    height: 24px;
+    padding-top: 2px;
+}
+
+
+li.nested_task {
+    margin-top: 0px;
+}

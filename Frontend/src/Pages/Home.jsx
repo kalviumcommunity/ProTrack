@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Style/home.css";
-// import Shift_box from "../Components/Shift_box";
+import Shift_box from "../Components/Shift_box";
 
 function Home(props) {
     return (
@@ -81,11 +81,11 @@ function Home(props) {
 
         <div className="home_left_dummy_box"></div>
 
-        {/* <div className="home_right_box">
+        <div className="home_right_box">
           {Shift_list.map((elem, index) => {
             return <Shift_box   shift={elem} key={index + 1} />;
           })}
-        </div> */}
+        </div>
       </div>
     </div>
     );
