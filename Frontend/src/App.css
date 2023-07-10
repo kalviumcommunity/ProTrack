@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  color: black;
+  box-sizing:  border-box;
+}
+body{
+  background-color: #F3F2EF;
+  overflow-x: hidden; 
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(1) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
