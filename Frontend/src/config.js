@@ -1,5 +1,9 @@
+
+
+let ip = process.env.BACKEND_IP;
+
 let parameters = {
-    backend_ip : "http://localhost:8080"
+    backend_ip : ip
 }
 
 export default parameters;

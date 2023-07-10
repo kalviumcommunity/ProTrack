@@ -29,6 +29,7 @@ function Navbar(props) {
                 <button className='button_user'>   <img className='logo small_logo' src={Man} alt="" /> Aman  <img className='small_logo' src={downArrow} alt="" /> </button>
             </div>
             
+            
         </div>
         <div className='navbar_dummy_box'>
 
