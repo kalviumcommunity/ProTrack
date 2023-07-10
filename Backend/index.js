@@ -1,0 +1,22 @@
+// const mongoose = require('mongoose')
+const express = require('express')
+const cors = require('cors')
+
+let app = express();
+let connectToDatabase = require('./db/ConnectDatabase')
+
+app.use(express.json());
+app.use(cors());
+
+
+
+connectToDatabase().then(() => {
+
+    app.listen('8080', () => {
+        console.log("server started on 8080")
+    })
+
+}
+)
+
+ 
