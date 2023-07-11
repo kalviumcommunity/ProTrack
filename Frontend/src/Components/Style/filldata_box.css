@@ -36,6 +36,7 @@
 
 .filldata_box_time {
     display:  flex;
+    gap: 10px;
 }
 
 #workdone_value  {
