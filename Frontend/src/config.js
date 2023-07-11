@@ -1,6 +1,6 @@
 
 let parameters = {
-    backend_ip : "http://localhost:8080"
+    backend_ip : `${import.meta.env.VITE_BACKEND_IP}`
 }
 
  export default parameters;
