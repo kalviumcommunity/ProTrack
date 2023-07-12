@@ -19,6 +19,7 @@ function Add_Picker(props) {
         shift: "No Shift",
         shift_status: "end",
         current_task: "No Task",
+        current_id : pickerData.ScrumId,
         current_status: "0",
         start_time: new Date(),
         end_time: new Date(),

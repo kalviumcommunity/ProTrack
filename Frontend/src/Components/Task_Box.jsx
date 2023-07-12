@@ -6,7 +6,7 @@ import './Style/task_box.css'
 import { useSelector } from "react-redux";
 
 
-function Task_Box({  task , shift }) {
+function Task_Box({task , shift }) {
 
     const [showShift, setShowShift] = useState(true);
 
@@ -19,13 +19,15 @@ function Task_Box({  task , shift }) {
     } )
 
 
+
+
   useEffect(() => {
     if (Pickers.length > 0) {
       
      let  TL = Pickers.filter((elem) => {
         return elem.shift == shift && elem.current_task == task;
       });
-
+      
       setTaskList(TL);
     }
   }, [Pickers]);
