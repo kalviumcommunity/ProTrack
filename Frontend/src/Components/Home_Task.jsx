@@ -88,6 +88,8 @@ function Home_Task({ user }) {
   }
 
   function changeTask(task) {
+
+    console.log(task)
     let par = "";
 
     if (user.shift_status == "start") {
@@ -121,7 +123,7 @@ function Home_Task({ user }) {
       } else if (task == "Absent") {
         prm = prompt("Please Enter Reason ");
       }
-
+     
       if (
         task != "" &&
         prm != null &&

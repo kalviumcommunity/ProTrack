@@ -4,20 +4,10 @@ import { useSelector } from "react-redux";
 
 import Task_Box from "./Task_Box";
 
-function Shift_box({ shift }) {
+function Shift_box({ shift , task_list }) {
 
   const [showShift, setShowShift] = useState(false);
   
-
-  let task_list = [
-    "No Task",
-    "Cluster",
-    "Packing", 
-    "Odd/Case", 
-    "Absent", 
-    "Break",
-    "Other"
-  ]
 
   return (
     <>
@@ -29,7 +19,7 @@ function Shift_box({ shift }) {
                     {
                         task_list.map((task , index ) => {
                             return (
-                                <Task_Box  shift={shift} task={task} key={index+1}/>
+                                <Task_Box   shift={shift} task={task} key={index+1}/>
                             )
                         })
                     }
