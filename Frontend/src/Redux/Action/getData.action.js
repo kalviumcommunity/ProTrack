@@ -1,27 +1,28 @@
 import parameters from "../../config";
 import ActionTypes from "../ActionTypes";
+import { useSelector } from "react-redux";
 
-function getData ( dispatch  ) {
+function getData(dispatch) {
+
 
     let ip = parameters.backend_ip;
 
-    let data =  fetch( `${ip}/picker/getpicker`)
-                .then((dta)=> {
-                    return dta.json();
-                }).then((dta) => {
 
-                    
-                    dispatch(
-                        {
-                            type : ActionTypes.UPDATEDATA ,
-                            payload : dta
-                        }
-                    )
+        let data = fetch(`${ip}/picker/getpicker`)
+            .then((dta) => {
+                return dta.json();
+            }).then((dta) => {
 
-                    return dta ;
-                })
-    
 
+                dispatch(
+                    {
+                        type: ActionTypes.UPDATEDATA,
+                        payload: dta
+                    }
+                )
+
+                return dta;
+            })
 
 
 }
