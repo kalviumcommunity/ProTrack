@@ -23,7 +23,7 @@
 
 
 
-.filldata_side_div_left > button {
+.filldata_side_div_left_btn {
     background-color: white;
     border: 1px solid    blue;
     color: blue;
@@ -31,6 +31,11 @@
     padding-right: 2rem;
     width: 140px;
 
+}
+
+.active {
+    background-color: blue;
+    color: white;
 }
 
 .filldata_vertical_line {
@@ -67,3 +72,5 @@
 .filldata_side_div {
     width: 17%;
 }
+
+

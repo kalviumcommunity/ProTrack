@@ -25,17 +25,17 @@ function FillData(props) {
       .then((res) => {
         setPickerData(res);
       });
-  }, []);
+  }, [pickerData]);
 
  
 
   return (
     <div className="filldata_parent_div">
       <div className="filldata_side_div_left">
-        <button onClick={() => {setDataType("Cluster")}}> Cluster </button>
+        <button className={ DataType == "Cluster" ? "filldata_side_div_left_btn active" : "filldata_side_div_left_btn" } onClick={(e) => {setDataType("Cluster")  }}> Cluster </button>
         <br />
         <br />
-        <button onClick={() => {setDataType("Packing")}}> Packing </button>
+        <button className={ DataType == "Packing" ? "filldata_side_div_left_btn active" : "filldata_side_div_left_btn" } onClick={() => {setDataType("Packing")}}> Packing </button>
       </div>
       <div className="filldata_side_div"> </div>
       <div className="filldata_vertical_line"></div>
@@ -58,6 +58,7 @@ function FillData(props) {
                                   e.work_done == 0 && (
                                   <>
                                     <Filldata_Box
+                                      setPickerData={setPickerData}
                                       key={parameterCount+=1}
                                       pickerObj={element}
                                       dayObj={elem}
@@ -82,7 +83,7 @@ function FillData(props) {
       <div className="filldata_side_div_right">
         <h3>Total Entries </h3>
         <br />
-        <button>{parameterCount}</button>
+        <button>{parameterCount > 0  ? parameterCount < 10 ?  `0${parameterCount}` : parameterCount : "00"}</button>
       </div>
 
       <div className="filldata_side_div"> </div>

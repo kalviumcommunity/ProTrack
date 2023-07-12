@@ -18,7 +18,7 @@
     gap: 10px;
 }
 
-.filldata_user_img {
+.filldata_user_img { 
     width: 40px;
 }
 
@@ -58,6 +58,7 @@
     border-radius: 5px;
     height: 30px;
     border: 1px solid rgba(0, 0, 0, 0.541);
+    padding: 10px;
 }
 
 

@@ -3,7 +3,7 @@ import Man from './../assets/images/man.png'
 import './Style/filldata_box.css'
 import parameters from '../config';
 
-function Filldata_Box({ pickerObj , dayObj , taskObj }) {
+function Filldata_Box({ pickerObj , dayObj , taskObj , setPickerData }) {
 
     const [workDone, setWorkDone] = useState(0);
     const [remark, setRemark] = useState("");
@@ -31,8 +31,11 @@ function Filldata_Box({ pickerObj , dayObj , taskObj }) {
                 })
             }
 
-            fetch(`${parameters.backend_ip}/picker/filldata`, postObj)
             setPost(true);
+
+                    fetch(`${parameters.backend_ip}/picker/filldata`, postObj)
+                    .then((res ) => {   return res.json(); })
+                    .then((res ) => { setPickerData( res )})
 
         }else{
             alert("Please enter work done !");
