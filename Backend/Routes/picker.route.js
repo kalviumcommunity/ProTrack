@@ -1,5 +1,5 @@
 const express = require('express');
-const { addPicker , getPicker , changeShift , startShift , changeTask  } = require('./../Controller/picker.controller');
+const { addPicker , getPicker , changeShift , startShift , changeTask , fillWorkDone } = require('./../Controller/picker.controller');
 
 const pickerRoute = express.Router();
 
@@ -90,6 +90,27 @@ pickerRoute.patch('/changetask' , async ( req , res ) => {
  
 
     }catch(err) {
+        console.log(err.message);
+        return res.status(500).send({
+            error : err.message
+        })
+    
+    }
+} )
+
+
+
+pickerRoute.patch('/filldata' , async ( req , res ) => {
+    try {  
+   
+        const { user_id , day_id , task_id , work_done , remark , task } = req.body;
+
+        let tsk = await fillWorkDone ( user_id , day_id , task_id , work_done , remark , task );
+
+        res.send( tsk ) ;
+ 
+    }catch(err) {
+
         console.log(err.message);
         return res.status(500).send({
             error : err.message

@@ -165,6 +165,78 @@ async function changeTask( pendinghu , updatedhu , old_task, parameter, id, new_
 }
 
 
+async function fillWorkDone(user_id, day_id, task_id, work_done , Remark, task) {
+
+    let oldid = await Picker.findById(user_id);
+
+    let filterdata = {};
+    oldid.day.map((elem, index) => {                    // day object of the cluster data entered
+        if (elem._id == day_id) {
+            filterdata = elem;
+        }
+    })
+
+
+    if (task == "Cluster") {
+
+        let cl = parseInt(work_done);                        // To store cluster lines total 
+        let cdur = 0;                                       // To sum total duration of work { Cluster }
+
+        filterdata.task_list.map((elem) => {                // for productivity calculation for a day
+
+            if (elem.task == "Cluster") {
+                cl = cl + elem.work_done;
+                let et = new Date(elem.end_time);
+                let st = new Date(elem.start_time);
+                cdur = cdur + (et - st);
+            }
+        })
+
+
+
+        let tsk = await Picker.updateOne({ _id: user_id }, {                 // Updating the task object of the day 
+            $set: {
+                "day.$[o].task_list.$[i].work_done": work_done,
+                "day.$[o].task_list.$[i].remark": Remark,
+                "day.$[o].cluster_lines": cl, "day.$[o].cluster_duration": cdur
+            }
+        }, {
+            arrayFilters: [{ 'o._id': day_id }, { "i._id": task_id }]
+        })
+
+    } else if (task == "Packing") {                                             // For packing calculations 
+
+        let pack = parseInt( work_done );
+        let packdur = 0;
+
+        filterdata.task_list.map((elem) => {
+
+            if (elem.task == "Packing") {
+                pack = pack + elem.work_done;
+                let et = new Date(elem.end_time);
+                let st = new Date(elem.start_time);
+                packdur = packdur + (et - st);
+            }
+
+        })
+
+
+
+        let tsk = await Picker.updateOne({ _id: user_id }, {
+            $set: {
+                "day.$[o].task_list.$[i].work_done": work_done,
+                "day.$[o].task_list.$[i].remark": Remark,
+                "day.$[o].packing_orders": pack, "day.$[o].packing_duration": packdur
+            }
+        }, {
+            arrayFilters: [{ 'o._id': day_id }, { "i._id": task_id }]
+        })
+
+    }
+
+}
+
+
 
 
 module.exports = {
@@ -172,5 +244,6 @@ module.exports = {
     getPicker,
     changeShift,
     startShift,
-    changeTask
+    changeTask,
+    fillWorkDone
 }
