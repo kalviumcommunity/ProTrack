@@ -1,0 +1,70 @@
+.filldata_box_parent_div {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.372);
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+}
+.filldata_box_header {
+    display:  flex;
+    justify-content: space-between;
+    padding: 8px;
+    align-items: center;
+}
+
+.filldata_box_header > div {
+    display:  flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filldata_user_img { 
+    width: 40px;
+}
+
+
+.filldata_box_middle_div ,
+.filldata_box_last_div 
+{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    /* border: 1px solid red; */
+}
+
+
+.filldata_box_time {
+    display:  flex;
+    gap: 10px;
+}
+
+#workdone_value  {
+    width: 69px;
+    height: 37px;
+    border-radius: 7px;
+    background-color: rgba(185, 164, 164, 0.429);
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+.filldata_box_last_div > div:first-child {
+    width: 78%;
+}
+
+#task_remark {
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.541);
+    padding: 10px;
+}
+
+
+.filldata_box_post_btn {
+
+    background-color: rgb(61, 123, 61);
+    color: white;
+
+}

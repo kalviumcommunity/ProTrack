@@ -1,0 +1,76 @@
+
+.filldata_parent_div {
+    display:  flex;
+    background-color: rgba(255, 255, 255, 0);
+    width:  100vw;
+    justify-content: space-evenly;
+    min-height: 87vh;
+    gap: 2%;
+}
+
+.filldata_side_div_left {
+    text-align: center;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.419);
+    width: 15%;
+    height: 10.6rem;
+    border-radius: 10px;
+    padding: 2rem;
+    position: fixed;
+    left: 60px;
+   
+} 
+
+
+
+.filldata_side_div_left_btn {
+    background-color: white;
+    border: 1px solid    blue;
+    color: blue;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 140px;
+
+}
+
+.active {
+    background-color: blue;
+    color: white;
+}
+
+.filldata_vertical_line {
+    border-left: 1px solid rgba(62, 55, 55, 0.438);
+    width: 1px;
+}
+
+.filldata_main_div {
+    width: 40%;
+    /* border: 1px solid black; */
+    
+}
+
+.filldata_side_div_right {
+    text-align: center;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    width: 15%;
+    height: 10.6rem;
+    border-radius: 10px;
+    padding: 2rem;
+    position: fixed;
+    right: 60px;
+} 
+
+
+.filldata_side_div_right > button {
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-weight: 800;
+}
+
+.filldata_side_div {
+    width: 17%;
+}
+
+

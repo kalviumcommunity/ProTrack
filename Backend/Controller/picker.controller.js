@@ -204,7 +204,7 @@ async function fillWorkDone(user_id, day_id, task_id, work_done , Remark, task) 
             arrayFilters: [{ 'o._id': day_id }, { "i._id": task_id }]
         })
 
-    } else if (task == "Packing") {                                             // For packing calculations 
+    } else if (task == "Packing") {                                              // For packing calculations 
 
         let pack = parseInt( work_done );
         let packdur = 0;
@@ -233,6 +233,9 @@ async function fillWorkDone(user_id, day_id, task_id, work_done , Remark, task) 
         })
 
     }
+
+    let pkr = await Picker.find();
+    return pkr;
 
 }
 
