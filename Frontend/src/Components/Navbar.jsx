@@ -10,22 +10,29 @@ import { Outlet, Link } from "react-router-dom";
 
 function Navbar(props) {
 
-    const [ activePage , setActivePage ] = useState("Home")
+    let currentURL = window.location.href;
+    currentURL = currentURL.split('/');
+    currentURL = currentURL[currentURL.length-1];
+
+    const [ activePage , setActivePage ] = useState(currentURL)
+    
 
     const style = { color: "yellow", fontSize: "1.5em" }
     return ( <>        <div id='nav_parent'>
+            <Link to="/home">
              <div className='menu_logo'>
                <img className='logo' src={Menu} alt="" /> 
-               <img className='logo' src={Productivity} alt="" />
+               <img className='logo_icon' src={Productivity} alt="" />
                 <h2>ProTrack</h2>
             </div>
+            </Link>
 
             <div className='nav_buttons'>
-            <Link to="/"><button onClick={()=> { setActivePage("Home")}} className={activePage == "Home" ?"button active":'button '}>Home</button></Link>
-            <Link to="/dashboard"><button onClick={()=> { setActivePage("Dashboard")}} className={activePage == "Dashboard" ?"button active":'button '}>Dashboard</button></Link>
-            <Link to="/fill"><button onClick={()=> { setActivePage("FillData")}} className={activePage == "FillData" ?"button active":'button '}>Fill Data</button></Link>
-            <Link to="/task"><button onClick={()=> { setActivePage("Task")}} className={activePage == "Task" ?"button active":'button '}>Task</button></Link>
-            <Link to="/addpicker"><button onClick={()=> { setActivePage("Add")}} className={activePage == "Add" ?"button active":'button '}>Add</button></Link>
+            <Link to="/home"><button onClick={()=> { setActivePage("home")}}  className={activePage == "home" ?"button active":'button '}>Home</button></Link>
+            <Link to="/dashboard"><button onClick={()=> { setActivePage("dashboard")}} className={activePage == "dashboard" ?"button active":'button '}>Dashboard</button></Link>
+            <Link to="/fill"><button onClick={()=> { setActivePage("fill")}} className={activePage == "fill" ?"button active":'button '}>Fill Data</button></Link>
+            <Link to="/task"><button onClick={()=> { setActivePage("task")}} className={activePage == "task" ?"button active":'button '}>Task</button></Link>
+            <Link to="/addpicker"><button onClick={()=> { setActivePage("addpicker")}} className={activePage == "addpicker" ?"button active":'button '}>Add</button></Link>
             </div>
 
             <div>

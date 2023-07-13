@@ -29,7 +29,8 @@
 
 
 
-img.logo {
+img.logo,
+img.logo_icon {
     width: 30px;
     height:30px;
     
