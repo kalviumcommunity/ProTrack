@@ -4,11 +4,14 @@
   font-family: sans-serif;
   color: black;
   box-sizing:  border-box;
+ 
 }
 body{
   background-color: #F3F2EF;
   overflow-x: hidden; 
+  min-height: max-content;
 }
+
 
 @keyframes logo-spin {
   from {
