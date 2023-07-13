@@ -10,7 +10,7 @@ function AllRoutes(props) {
     return (
         <>
             <Routes>
-                <Route path='/'  element={<Home/>}> </Route>
+                <Route path='/home'  element={<Home/>}> </Route>
                 <Route path='/dashboard'  element={<Dashboard/>}  ></Route>
                 <Route path='/fill' element={<Filldata/>}></Route>
                 <Route path='/task' element={<Task/>}></Route>
