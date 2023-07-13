@@ -1,6 +1,6 @@
 .home_button_task {
-    background-color: green;
-    color: white;
+    background-color: #04AA6D;
+    color: white !important;
     width: 100%;
     margin-top: 10px;
     height: 24px;

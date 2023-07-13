@@ -1,0 +1,46 @@
+.dashboard_task_btn {
+    display: flex;
+    justify-content: space-between;
+    background-color: #04AA6D;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 5px;
+    height: 65px;
+}
+
+.dashboard_task_btn  p,
+.dashboard_task_btn  strong,
+.dashboard_c2_1 p,
+.day_time > span 
+ {
+    color: white;
+}
+
+
+.dashboard_task_btn > div {
+    text-align: left;
+    width: 250px;
+}
+
+
+.dashboard_task_btn > div:first-child {
+    font-size: 1.5rem
+}
+
+
+.productivity_daywise > div {
+    display: flex;
+}
+
+
+.productivity_daywise > div > p:first-child {
+    width: 170px;
+}
+
+.day_time {
+    display: flex;
+}
+
+.day_time  > p {
+    width: 50px;
+}
