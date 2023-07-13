@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Style/dashboard_child2.css";
 import Dashboard_Child3 from "./Dashboard_Child3";
-import Dashboard_Child2_1 from "./Dashboard_Child2_1";
 
 function Dashboard_Child2({ dayObj }) {
   const [showShift, setShowShift] = useState(false);
