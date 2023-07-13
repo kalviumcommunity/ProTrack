@@ -19,11 +19,13 @@ function Navbar(props) {
 
     const style = { color: "yellow", fontSize: "1.5em" }
     return ( <>        <div id='nav_parent'>
+            <Link to="/home">
              <div className='menu_logo'>
                <img className='logo' src={Menu} alt="" /> 
-               <img className='logo' src={Productivity} alt="" />
+               <img className='logo_icon' src={Productivity} alt="" />
                 <h2>ProTrack</h2>
             </div>
+            </Link>
 
             <div className='nav_buttons'>
             <Link to="/home"><button onClick={()=> { setActivePage("home")}}  className={activePage == "home" ?"button active":'button '}>Home</button></Link>

@@ -5,11 +5,13 @@ import Dashboard from '../Pages/Dashboard';
 import Filldata from '../Pages/Filldata';
 import Task from '../Pages/Task';
 import Add_picker from '../Pages/Add_picker';
+import Login from '../Pages/Login';
 
 function AllRoutes(props) {
     return (
         <>
             <Routes>
+                <Route path='/' element={<Login/>}></Route>
                 <Route path='/home'  element={<Home/>}> </Route>
                 <Route path='/dashboard'  element={<Dashboard/>}  ></Route>
                 <Route path='/fill' element={<Filldata/>}></Route>
