@@ -4,11 +4,16 @@
   font-family: sans-serif;
   color: black;
   box-sizing:  border-box;
+  /* background-color: #F3F2EF; */
 }
 body{
   background-color: #F3F2EF;
   overflow-x: hidden; 
+  min-height: max-content;
 }
+/* document {
+  background-color: #F3F2EF;
+} */
 
 @keyframes logo-spin {
   from {
