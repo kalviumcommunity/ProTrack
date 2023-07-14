@@ -1,0 +1,35 @@
+.model_parent_div {
+    width: 400px;
+    height: 185px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    border-radius: 4px;
+    position: fixed;
+    top: 200;
+    z-index: 2;
+    left: 35%;
+    padding: 20px;
+    
+}
+.model_parent_div > p {
+    color: rgba(0, 0, 0, 0.63);
+}
+
+.input_model {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.322);
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.model_submit_buttons {
+    text-align: right;
+}
+
+
+.model_submit_buttons > button {
+    margin-left: 10px;
+}

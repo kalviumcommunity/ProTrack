@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import getData from "../Redux/Action/getData.action";
 import ManpowerStatus from "../Components/ManpowerStatus";
 
+
+
 function Home(props) {
 
 
@@ -31,6 +33,8 @@ function Home(props) {
 
 
   return (
+    <>
+    
     <div id="home_parent_box">
       <div>
         
@@ -52,6 +56,9 @@ function Home(props) {
 
       </div>
     </div>
+
+
+    </>
   );
 }
 
