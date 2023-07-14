@@ -37,3 +37,7 @@
     font-size: small;
 
 }
+
+.toast-position {
+    top: 4rem !important;
+}
