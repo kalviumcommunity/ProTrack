@@ -3,10 +3,15 @@ const express = require('express')
 const cors = require('cors')
 const pickerRoute = require('./Routes/picker.route')
 let app = express();
-let connectToDatabase = require('./db/ConnectDatabase')
-
+let connectToDatabase = require('./db/ConnectDatabase');
+const userRoute = require('./Routes/user.route');
+const AuthMiddleware = require('./Middleware/userAuth.middleware')
 app.use(express.json());
 app.use(cors());
+
+app.use('/user' , userRoute);
+
+// app.use( AuthMiddleware );
 
 app.use('/picker' , pickerRoute );
 
