@@ -33,7 +33,7 @@ function Login(props) {
                         <label htmlFor="login_password">Password : </label>{" "}
                         <br />
                         <input
-                            type="text"
+                            type="password"
                             id="login_password"
                             className="input_box_login"
                             placeholder="Enter Password"
