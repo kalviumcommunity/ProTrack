@@ -2,8 +2,7 @@
 #nav_parent {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 60px;
+    height: 55px;
     justify-content: space-between;
     /* background-color: blue; */
     width: 100vw;
@@ -60,6 +59,11 @@ img.logo_icon {
     height: 40px;
 }
 
+.button.active {
+    background-color: blue;
+    color: white;
+}
+
 .button_user {
     border-radius: 30px;
     background-color: white;
@@ -70,9 +74,36 @@ img.logo_icon {
     gap: 20px;
     height: 40px;
     padding: 8px;
+  
 }
 
 .navbar_dummy_box {
     height: 70px;
     width: 100%;
+}
+
+.logout_btn {
+    background-color: white;
+    border-radius: 8px;
+    position: Absolute;
+    top: 55px;
+    right: 25px;
+    width: 130px;
+    border: 1px solid blue;
+    color: blue;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+
+.logout_btn >span {
+    color: blue;
+}
+
+
+
+.power_btn {
+    width: 25px;
 }

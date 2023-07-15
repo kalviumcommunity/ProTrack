@@ -2,14 +2,22 @@ import React, { useState } from "react";
 import "./Style/add_picker.css";
 import parameters from "../config";
 
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Add_Picker(props) {
   const [pickerData, setPickerData] = useState({});
-  
-  async function addData(e) {
 
+  const token = JSON.parse(localStorage.getItem("token"));
+
+  async function addData(e) {
     const reqData = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({
         name: pickerData.Name,
         gender: pickerData.Gender,
@@ -19,7 +27,7 @@ function Add_Picker(props) {
         shift: "No Shift",
         shift_status: "end",
         current_task: "No Task",
-        current_id : pickerData.ScrumId,
+        current_id: pickerData.ScrumId,
         current_status: "0",
         start_time: new Date(),
         end_time: new Date(),
@@ -29,8 +37,17 @@ function Add_Picker(props) {
     fetch(`${parameters.backend_ip}/picker/addpicker`, reqData)
       .then((res) => res.json())
       .then((res) => console.log(res));
-
-    alert("Picker Added Sucessfully ");
+    setPickerData({Name : "" , ScrumId : "" , DOJ : "" , Gender : "" })
+    toast.success("Picker Added Sucessfully ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   }
 
   return (
@@ -44,7 +61,10 @@ function Add_Picker(props) {
             id="user_name"
             className="input_box_add_picker"
             placeholder="Enter Username"
-            onChange={(e) => { setPickerData({...pickerData , Name : e.target.value })}}
+            value={pickerData.Name}
+            onChange={(e) => {
+              setPickerData({ ...pickerData, Name: e.target.value });
+            }}
           />
         </div>
         <div>
@@ -54,21 +74,36 @@ function Add_Picker(props) {
             id="scrum_id"
             className="input_box_add_picker"
             placeholder="Enter Scrum ID"
-            onChange={(e) => { setPickerData({...pickerData , ScrumId : e.target.value })   }}
+            value={pickerData.ScrumId}
+            onChange={(e) => {
+              setPickerData({ ...pickerData, ScrumId: e.target.value });
+            }}
           />
         </div>
         <div>
           <label htmlFor="doj">DOJ : </label>
           <input
-            className="input_box_add_picker" 
-            type="date" 
-            id="doj" 
-            onChange={(e) => { setPickerData({...pickerData , DOJ : e.target.value }) }}
+            className="input_box_add_picker"
+            type="date"
+            id="doj"
+            value={pickerData.DOJ}
+            onChange={(e) => {
+              setPickerData({ ...pickerData, DOJ: e.target.value });
+            }}
           />
         </div>
         <div>
           <label htmlFor="gender"> Gender : </label>
-          <select className="select_tag_add_picker" name="gender" id="gender" onChange={(e) => { setPickerData({ ...pickerData , Gender : e.target.value }) }}>
+          <select
+            className="select_tag_add_picker"
+            name="gender"
+            id="gender"
+            value={pickerData.Gender}
+            onChange={(e) => {
+              setPickerData({ ...pickerData, Gender: e.target.value });
+            }}
+          >
+            <option value=""> Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Other">Other</option>
@@ -78,8 +113,25 @@ function Add_Picker(props) {
           <label htmlFor="image">Upload Image : </label>{" "}
           <input type="file" className="file_input_add_picker" id="image" />
         </div>
-        <button onClick={addData}  className="add_picker_submit_btn"> Submit </button>
+        <button onClick={addData} className="add_picker_submit_btn">
+          {" "}
+          Submit{" "}
+        </button>
       </div>
+      <ToastContainer
+        className="toast-position"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    
     </div>
   );
 }

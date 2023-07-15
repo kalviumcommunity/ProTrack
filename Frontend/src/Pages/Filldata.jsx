@@ -10,11 +10,13 @@ function FillData(props) {
   
   let parameterCount = null ;
 
+  const token = JSON.parse(localStorage.getItem("token"));
+
   useEffect(() => {
     const reqbody = {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", "authorization" : `Bearer ${token}`
       },
     };
 

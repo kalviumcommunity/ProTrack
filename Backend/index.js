@@ -11,7 +11,7 @@ app.use(cors());
 
 app.use('/user' , userRoute);
 
-// app.use( AuthMiddleware );
+app.use( AuthMiddleware );
 
 app.use('/picker' , pickerRoute );
 
