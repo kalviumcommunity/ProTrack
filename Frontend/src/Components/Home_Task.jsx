@@ -12,6 +12,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Home_Task({ user }) {
 
+  const token = JSON.parse(localStorage.getItem("token"));
+  
+
   const [modelState, setModelState] = useState({
     state: false,
     modelValue: "",
@@ -51,7 +54,7 @@ function Home_Task({ user }) {
       if (user.current_task == "No Task") {
         const reqData = {
           method: "PATCH",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json",  "authorization" : `Bearer ${token}` },
           body: JSON.stringify({
             shift,
           }),
@@ -135,14 +138,14 @@ function Home_Task({ user }) {
     if (conf == 1) {
       const reqData = {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" , "authorization" : `Bearer ${token}` },
         body: JSON.stringify({
           shift: user.shift,
           shift_status: user.shift_status,
         }),
       };
 
-      let dta = fetch(
+      fetch(
         `${parameters.backend_ip}/picker/startshift?id=${user._id}`,
         reqData
       )
@@ -230,13 +233,13 @@ function Home_Task({ user }) {
       pendinghu != -1 &&
       pendinghu != null
     ) {
-      const token = JSON.parse(localStorage.getItem("token"));
+     
 
       const reqData = {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
+          "authorization" : `Bearer ${token}`
         },
         body: JSON.stringify({
           pendinghu,
@@ -247,7 +250,7 @@ function Home_Task({ user }) {
         }),
       };
 
-      let dta = fetch(
+      fetch(
         `${parameters.backend_ip}/picker/changetask?id=${user._id}`,
         reqData
       )

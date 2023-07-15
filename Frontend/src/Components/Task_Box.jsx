@@ -18,9 +18,6 @@ function Task_Box({task , shift }) {
       return state.Pickers;
     } )
 
-
-
-
   useEffect(() => {
     if (Pickers.length > 0) {
       

@@ -4,7 +4,7 @@ import Home from '../Pages/Home';
 import Dashboard from '../Pages/Dashboard';
 import Filldata from '../Pages/Filldata';
 import Task from '../Pages/Task';
-import Add_picker from '../Pages/Add_picker';
+import Add_Picker from '../Pages/Add_Picker';
 import Login from '../Pages/Login';
 import PrivateRoute from './PrivateRoute';
 import Navbar from './Navbar';
@@ -17,7 +17,7 @@ function AllRoutes(props) {
                 <Route path='/dashboard'  element={ <PrivateRoute><Navbar/>  <Dashboard/> </PrivateRoute> }  ></Route>
                 <Route path='/fill' element={ <PrivateRoute> <Navbar/><Filldata/> </PrivateRoute> }></Route>
                 <Route path='/task' element={<PrivateRoute> <Navbar/><Task/> </PrivateRoute> }></Route>
-                <Route path='/addpicker' element={<PrivateRoute> <Navbar/> <Add_picker/> </PrivateRoute> }></Route>
+                <Route path='/addpicker' element={<PrivateRoute> <Navbar/> <Add_Picker/> </PrivateRoute> }></Route>
                 
             </Routes>    
         </>

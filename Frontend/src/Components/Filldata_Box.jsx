@@ -5,6 +5,8 @@ import parameters from '../config';
 
 function Filldata_Box({ pickerObj , dayObj , taskObj , setPickerData }) {
 
+    const token = JSON.parse(localStorage.getItem("token"));
+
     const [workDone, setWorkDone] = useState(0);
     const [remark, setRemark] = useState("");
     const [post, setPost] = useState(false)
@@ -18,7 +20,7 @@ function Filldata_Box({ pickerObj , dayObj , taskObj , setPickerData }) {
                
             const postObj = {
                 method: "PATCH",
-                headers: { 'Content-Type': "application/json"  },
+                headers: { 'Content-Type': "application/json" ,  "authorization" : `Bearer ${token}` },
                 body: JSON.stringify({
                     user_id: pickerObj._id,
                     day_id: dayObj._id,
