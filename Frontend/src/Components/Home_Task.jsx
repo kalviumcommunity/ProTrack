@@ -17,7 +17,8 @@ function Home_Task({ user }) {
     modelValue: "",
     message: "",
     initialValue: "",
-    placeholderValue: ""
+    placeholderValue: "",
+    nextFunction : ""
   });
   
 
@@ -31,7 +32,7 @@ function Home_Task({ user }) {
       user.day[user.day.length - 1].task_list[
         user.day[user.day.length - 1].task_list.length - 1
       ];
-    par = taskObj.user_id;
+    par = taskObj.user_id;                                           // for storing last day last task userid and remark for showing to task box
     rmk = taskObj.remark;
     let st = new Date(taskObj.start_time);
     let hr = st.getHours();
@@ -42,7 +43,7 @@ function Home_Task({ user }) {
     if (mn < 10) {
       mn = `0${mn}`;
     }
-    tme = `${hr} : ${mn}`;
+    tme = `${hr} : ${mn}`;                                              // time for task box 
   }
 
   function changeShift(shift) {
@@ -78,6 +79,7 @@ function Home_Task({ user }) {
       }
     }
   }
+
   function toggleShiftPre () {
     if (user.shift_status == "start") {
       setModelState({
@@ -88,7 +90,7 @@ function Home_Task({ user }) {
         nextFunction : "toggleShift"
       });
     }else{
-      toggleShift();
+      toggleShift(1);                                         // for starting the shift we don't need confirmation   
     }
   }
 

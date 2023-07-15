@@ -20,7 +20,6 @@ function Dashboard(props) {
         }
     }, [] )
 
-console.log(pickerData  )
 
   return (
     <div id="home_parent_box">
