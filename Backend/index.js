@@ -6,10 +6,13 @@ let app = express();
 let connectToDatabase = require('./db/ConnectDatabase');
 const userRoute = require('./Routes/user.route');
 const AuthMiddleware = require('./Middleware/userAuth.middleware')
+const notificationRouter = require('./Routes/notification.route')
 app.use(express.json());
 app.use(cors());
 
 app.use('/user' , userRoute);
+
+app.use('/notification' , notificationRouter );
 
 app.use( AuthMiddleware );
 
