@@ -1,0 +1,31 @@
+.dash_left_box::-webkit-scrollbar {
+    display: none;
+  }
+
+.dash_left_box {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+.dash_left_box {
+    padding: 20px;
+    overflow: auto;
+}
+
+.add_icon_dash  {
+    position: fixed;
+    bottom: 20px;
+    left: 370px;
+}
+.add_icon_dash > img {
+    width: 50px;
+}
+
+.noti_dash_model {
+    position: absolute;
+    top: 210px;
+    border-radius:10px ;
+    width: 367.5px;
+    /* border: 1px solid; */
+
+}
