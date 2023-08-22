@@ -4,6 +4,7 @@ const Notification = require('./../Models/notification.model')
 
 async function addNotification ( data ) {
     let dta = await Notification.create(data);
+    dta = await Notification.find();
     return dta;
 }
 
@@ -14,6 +15,7 @@ async function getNotification(){
 
 async function deleteNotification(id){
     let dta = await Notification.findOneAndDelete({ _id : id });
+    dta = await Notification.find();
     return dta;
 }
 async function updateNotification(dta){

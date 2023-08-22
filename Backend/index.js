@@ -12,10 +12,9 @@ app.use(cors());
 
 app.use('/user' , userRoute);
 
-app.use('/notification' , notificationRouter );
-
 app.use( AuthMiddleware );
 
+app.use('/notification' , notificationRouter );
 app.use('/picker' , pickerRoute );
 
 connectToDatabase().then(() => {
